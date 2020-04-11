@@ -20,4 +20,4 @@ const Menuitem = ({title, imageUrl, size, linkUrl, history, match}) => (
         </div>
       </div>
 );
-export default withRouter(Menuitem);
+export default withRouter(Menuitem)
