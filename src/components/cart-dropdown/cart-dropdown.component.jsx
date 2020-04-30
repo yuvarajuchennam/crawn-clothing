@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import CustomButton from '../custom-button/custom-button.component';
+import { selectCartItems } from '../../redux/cart/cart.selectors';
 import CartItem from '../cart-item/cart-item.component';
 
 import './cart-dropdown.styles.scss';
@@ -17,8 +18,13 @@ const CartDropdown = ({cartItems}) => (
   </div>
 );
 
-const mapStateToProps = ({ cart: { cartItems } }) => ({
-  cartItems
-});
+const mapStateToProps = (store) => {
+  console.log('Cart Items ')
+  return ({
+    // reselect library for stop rerendering when unrelated store changes
+    cartItems: selectCartItems(store)
+    // cartItems: store.cart.cartItems
+  }
+)};
 
 export default connect(mapStateToProps)(CartDropdown);
