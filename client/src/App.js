@@ -29,6 +29,7 @@ const App = ({checkUserSession, currentUser}) => {
         <Route path='/shop' component={ShopPage} />
         <Route exact path='/checkout' component={CheckoutPage} />
         {/* test */}
+        {/* test */}
         <Route
           exact
           path='/signin'
